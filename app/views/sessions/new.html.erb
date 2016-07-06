@@ -1,19 +1,20 @@
 <% provide(:title, "ログインページ") %>
-<h1>Log in</h1>
 
 <div class="container">
-  <div class="">
-    <%= form_for(:session, url: login_path) do |f| %>
+	<div>
+		<h1>Log in</h1>
+	</div>
+	<div>
+  	<%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+  	  <%= f.label :email %>
+  	  <%= f.email_field :email, style: 'width:100%'%>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+			<%= f.label :password %>
+ 	  	<%= f.password_field :password, style: 'width:100%' %>
 
-      <%= f.submit "Log in", :class => "button"%>
-    <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path, :class => "button" %></p>
-  </div>
+   		<%= f.submit "Log in", :class => "button", style: 'width:100%; margin: 10px auto' %>
+ 		<% end %>
+		<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+	</div>
 </div>
