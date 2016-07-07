@@ -1,4 +1,26 @@
 <% provide(:title, "TODOリスト") %>
+
+<header>
+	<div class="container">
+		<nav>
+			<ul>
+				<li><%= link_to "Home", root_path %></li>
+				<% if logged_in? %>
+					<li><%= link_to "Users", '#' %></li>
+					<li><%= link_to "Profile", current_user %></li>
+					<li><%= link_to "Settings", '#' %></li>
+					<li class="divider"></li>
+					<li>
+						<%= link_to "Log out", logout_path, method: "delete" %>
+					</li>
+				<% else %>
+					<li><%= link_to "Log in", login_path %></li>
+				<% end %>
+			</ul>
+		</nav>
+	</div>
+</header>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Todo Lists</h1>
