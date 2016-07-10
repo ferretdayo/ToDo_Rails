@@ -15,15 +15,20 @@ Things you may want to cover:
 
 * Database creation
 
-　rake db:migrate
-
+```
+  rake db:migrate
+```
 * Database initialization
 
+```
   rake db:migrate:reset
-  らしい
+```
+らしい
 
 * 動かし方
 
+```
   bundle install
 
   rails s -b IPAddress -p PortNumber
+```
