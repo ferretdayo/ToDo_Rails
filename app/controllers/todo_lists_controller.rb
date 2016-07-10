@@ -4,7 +4,7 @@ class TodoListsController < ApplicationController
   # GET /todo_lists
   # GET /todo_lists.json
   def index
-    @todo_lists = TodoList.where(:user_id => current_user.id)
+    @todo_lists = TodoList.where(:user_id => current_user.id).order("priority DESC", "created_at DESC")
   end
 
   # GET /todo_lists/1
@@ -26,7 +26,7 @@ class TodoListsController < ApplicationController
   def create
     @todo_list = TodoList.new(todo_list_params)
     @todo_list.user_id = current_user.id
-		
+
     respond_to do |format|
       if @todo_list.save
         format.html { redirect_to @todo_list, notice: 'Todo list was successfully created.' }
@@ -70,6 +70,6 @@ class TodoListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_list_params
-      params.require(:todo_list).permit(:content, :user_id)
+      params.require(:todo_list).permit(:content, :user_id, :priority)
     end
 end
