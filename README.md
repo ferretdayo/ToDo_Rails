@@ -7,18 +7,23 @@ Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
+  * 2.3.1
 
-* Configuration
+* Rails version
+
+  * 5.0.0
 
 * Database creation
 
+　rake db:migrate
+
 * Database initialization
 
-* How to run the test suite
+  rake db:migrate:reset
+  らしい
 
-* Services (job queues, cache servers, search engines, etc.)
+* 動かし方
 
-* Deployment instructions
+  bundle install
 
-* ...
+  rails s -b IPAddress -p PortNumber
